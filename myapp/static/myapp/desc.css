@@ -1,0 +1,82 @@
+.main-container{
+    padding-top: 2vh;
+    height:80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10vh 0;
+    background-color: #FBF6D9;
+  }
+  .wrapper{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  img{
+    max-height:42rem;
+  }
+  
+  .container2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height:80vh;
+    width:80vw;
+  }
+  
+  .desc-box{
+    margin-right: 2vw;;
+    margin-top: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly ;
+    height:50vh;
+  }
+  
+  .tab-content{
+    font-size: 1.3rem;
+  }
+  .nav-link {
+    color:#b8860b;
+    background-color: transparent;
+    font-size: 1.6rem;
+  }
+  .nav-link:hover{
+    color:#b8860b
+  }
+  #enquiry{
+    margin-top:10vh;
+    height:8vh;
+    width:12vw;
+    font-size: 1.6rem;
+    color:white;
+    background-color: #b8860b;
+    border: none;
+    border-radius: 50px;;
+  }
+  #pills-home{
+    width:50vh;
+  }
+  span{
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .content .topic{
+    font-size: 1.8em;
+    font-weight: 600;
+    color:#b8860b;
+    margin-bottom: 16px;
+  
+  }
+  @media (max-width:1100px) {
+
+  }
+  
+  @media (max-width:950px){
+  
+  }
+  @media (max-width:560px){
+  }

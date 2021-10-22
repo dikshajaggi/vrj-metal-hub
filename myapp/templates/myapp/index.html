@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRJ Metal Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/headerfooter.css' %}">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  </head>
+<body>
+    <div class="grid-container">
+        <header id="header-container">
+            <div class="topnav head"  id="myTopnav" id="{{category.id}}">
+              <div class="brand"><a href="/myapp"><img src= "{% static 'myapp/brand_logo.png' %}" id="brand-logo"></a></div>
+                
+                <div class="wrap">
+                  <div class = "other">
+                   <a href="/myapp" class="abtn" id="home">Home</a>
+                    <a href="/myapp/newArrivals" class="abtn" id="new">New Arrivals</a>
+                    <a href="/myapp/offers" class="abtn">Offers</a>
+                  </div>
+                
+                  <div class="shifthover">
+                    {% for categories in category %}
+                      <a href="prodCat/?categories={{categories.id}}">{{categories.name}}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+               
+
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+            </div>
+        </header>
+        <main id="main-container">
+          <div class = "slide-show">
+            <div class="slideshow-container">
+              <div class="mySlides fade">
+                <img src="{% static 'myapp/banner1.jpg' %}" style="width:100%">
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="{% static 'myapp/banner2.jpg' %}" style="width:100%">
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="{% static 'myapp/banner3.jpg' %}" style="width:100%">
+              </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              
+              <br>
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+              </div>
+              </div>
+          </div>
+          <div class = "icons-container">
+            <ul class="icons">
+            {% for categories in category %}
+              <li>
+                <div class="icon">
+                  <img src="{{categories.image.url}}">
+                  <h2>{{categories.name}}</h2>
+                  <a href="prodCat/?categories={{categories.id}}"><button class="shopnow">SHOP NOW</button></a>
+                </div>
+              </li>
+            {% endfor %}  
+            </ul>
+          </div>
+          <div class = "featured-products">
+            <h2>OUR BEST</h2>
+            <h4>Featured Products</h4>
+            <ul class="products">
+              <li>
+                <div class="product">
+                  <a href ="prodCat/?categories=6"><img src="{% static 'myapp/Lion Mouth (Yellow Antique) Brass Door Knocker.jpg' %}"></a>
+                </div>
+              </li>
+              <li>
+                <div class="product">
+                  <a href ="prodCat/?categories=4"><img src="{% static 'myapp/Shubh Labh with Bells Door & Wall Hanging (Yellow Antique).jpg' %}"></a>
+                </div>
+              </li>
+              <li>
+                <div class="product">
+                  <a href ="prodCat/?categories=1"><img src="{% static 'myapp/75.jpg' %}"></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class = "collection-products">
+            <h2>OUR</h2>
+            <h4>Collections</h4>
+            <ul class="products cp">
+              <li>
+                <div class="product">
+                  <a href ="prodCat/?categories=1"><img src="{% static 'myapp/62.jpg' %}"></a>
+                </div>
+              </li>
+              <li>
+                <div class="product">
+                  <a href ="prodCat/?categories=3"><img src="{% static 'myapp/38.jpg' %}"></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class = "selling-products">
+            <h2>OUR BEST</h2>
+            <h4>Selling Products</h4>
+            <ul class="products">
+              <li>
+                <div class="product">
+                  <a href ="prodCat/?categories=5"><img src="{% static 'myapp/63.jpg' %}"></a>
+                </div>
+              </li>
+              <li>
+                <div class="product">
+                  <a href ="prodCat/?categories=5"><img src="{% static 'myapp/DSC_4542.jpg' %}"></a>
+                </div>
+              </li>
+              <li>
+                <div class="product">
+                  <a href ="prodCat/?categories=1"><img src="{% static 'myapp/DSC_4570.jpg' %}"></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </main>
+        </main>
+        <footer>
+            <div class="content">
+              <div class="left box">
+                <div class="lower">
+                  <div class="footertopic">CONTACT US</div>
+                  <div class="phone" style="margin-bottom: 4vh;"><h1 style="font-size: 1.6rem;color: #b8860b;">Phone</h1>
+                    
+                  </div>
+                  <div class="email" style="margin-bottom: 4vh;"><h1 style="font-size: 1.6rem;color: #b8860b;">Email</h1>
+                    
+                  </div>
+                  <div class="email" style="margin-bottom: 4vh;"><h1 style="font-size: 1.6rem;color: #b8860b;">Address</h1>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="middle box">
+                <div class="footertopic">USEFUL LINKS</div>
+                <div><a href="/myapp">Home</a></div>
+                <div><a href="/myapp/about">About Us</a></div>
+                <div><a href="/myapp/form">Contact Us</a></div>
+                <div><a href="/myapp/about#privacy">Privacy Policy</a></div>
+              </div>
+              <div class="middle box">
+                <div class="footertopic">CATEGORIES</div>
+               {% for categories in category %}
+                    <div><a href="prodCat/?categories={{categories.id}}">{{categories.name}}</a></div>
+               {% endfor %}
+              </div>
+            </div>
+            <div class="bottom">
+              <p>Copyright © 2021 <a href="#">VRJ Metal Hub</a></p>
+            </div>
+          </footer>
+    </div>
+    
+</body>
+<script>
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+    </script>
+</html>

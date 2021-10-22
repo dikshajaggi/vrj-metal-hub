@@ -1,0 +1,117 @@
+
+  /*-----------main-----------*/
+  body{
+    background-color: #f9f9f9;
+  }
+  #heading{
+    margin-top: 4vh;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    color: #b8860b;
+    font-size: 3rem;
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
+  }
+  .main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-container-1{
+    background-image: url("../myapp/banner1.jpg");
+    min-height:70vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .main-container-2 {
+    width: 100%;
+      margin-top: 8vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+  }
+  .main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 25%;
+      padding:4vh;
+      margin-bottom: 6vh;
+  }
+  .main a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .main h4{
+    margin-top: 4vh;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #39393a;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .main img{
+      max-height: 20rem;;
+  }
+
+  footer .content .topic{
+    font-size: 1.8em;
+    font-weight: 600;
+    color:#b8860b;
+    margin-bottom: 16px;
+  
+  }
+
+  
+  /*----------image hover---------*/
+ .main img {
+    transform: scale(1);
+    transition: .3s ease-in-out;
+  }
+ .main:hover img {
+    transform: scale(1.1);
+  }
+
+  .main:hover {
+    bottom: -36px;
+    opacity: 1;
+  }
+  .main{
+    overflow: hidden;
+  }
+
+@media (max-width:950px){
+  .main img{
+    max-height: 15rem;;
+  }
+  .main h4{
+    font-size: 1rem;
+  }
+}
+@media (max-width:560px){
+  .main img{
+    max-height: 8rem;;
+  }
+  .main h4{
+    font-size: 0.8rem;
+  }
+  }

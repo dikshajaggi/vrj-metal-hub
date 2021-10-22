@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRJ Metal Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/about.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/headerfooter.css' %}">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  </head>
+<body>
+    <div class="grid-container">
+        <header id="header-container">
+            <div class="topnav head"  id="myTopnav" id="{{category.id}}">
+              <div class="brand"><a href="/myapp"><img src= "{% static 'myapp/brand_logo.png' %}" id="brand-logo"></a></div>
+                <div class = "wrap">
+                  <div class = "other">
+                   <a href="/myapp" class="abtn" id="home">Home</a>
+                    <a href="/myapp/newArrivals" class="abtn" id="new">New Arrivals</a>
+                    <a href="/myapp/offers" class="abtn">Offers</a>
+                  </div>
+                  <div class="shifthover">
+                    {% for categories in category %}
+                      <a href="/myapp/prodCat/?categories={{categories.id}}">{{categories.name}}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+              </div>
+        </header>
+
+        <div class="main">
+          <h4> About Us </h4>
+         <div id="about">
+             <div id="image">
+              <img src="{% static 'myapp/63.jpg' %}" style="height:50vh;">
+             </div>
+
+             <div id="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida neque non leo pretium eleifend. Etiam bibendum dictum purus, blandit mattis dolor convallis quis. 
+              Vivamus eget rutrum libero, sed suscipit dui. Aenean venenatis leo nec mi facilisis condimentum. Integer mauris justo, lobortis at velit a, gravida placerat ipsum. 
+              Suspendisse a mi metus. Ut aliquam faucibus luctus. Vivamus ante mi, lobortis in iaculis in, dignissim sit amet tellus. Donec quis ullamcorper dui. 
+              Donec commodo sed elit at iaculis. Phasellus commodo fermentum lacus vel sodales. Pellentesque interdum et mi quis ullamcorper. Nunc ligula massa, aliquet nec ipsum at, pretium congue mi. 
+              Maecenas accumsan consequat ullamcorper.</p>
+            </div>
+         </div>
+
+         <div id="privacy">
+            <div id="legal-disclaimer">
+              <h4> Legal Disclaimer </h4>
+              <p>VRJ METAL HUB always commit to provide 100% satisfaction product to the customer. So while purchasing please try to watch SELLER NAME AS VRJ METAL HUB and BRAND NAME "VRJ METAL HUB". 
+              ALL DISPUTES ARE SUBJECT TO ALIGARH JURISDICTION ONLY.</p>
+            </div>
+            <div id="policy">
+              <h4> Privacy Policy </h4>
+              <p>pendisse a mi metus. Ut aliquam faucibus luctus. Vivamus ante mi, lobortis in iaculis in, dignissim sit amet tellus. Donec quis ullamcorper dui. 
+              Donec commodo sed elit at iaculis. Phasellus commodo fermentum lacus vel sodales. Pellentesque interdum et mi quis ullamcorper. Nunc ligula massa, aliquet nec ipsum at, pretium congue mi. 
+              Maecenas accumsan cons</p>
+              <p>pendisse a mi metus. Ut aliquam faucibus luctus. Vivamus ante mi, lobortis in iaculis in, dignissim sit amet tellus. Donec quis ullamcorper dui. 
+              Donec commodo sed elit at iaculis. Phasellus commodo fermentum lacus vel sodales. Pellentesque interdum et mi quis ullamcorper. Nunc ligula massa, aliquet nec ipsum at, pretium congue mi. 
+              Maecenas accumsan cons</p>
+            </div>
+         </div>
+        </div>
+
+        <footer>
+            <div class="content">
+              <div class="left box">
+                <div class="lower">
+                  <div class="footertopic">CONTACT US</div>
+                  <div class="phone" style="margin-bottom: 4vh;"><h1 style="font-size: 1.6rem;color: #b8860b;">Phone</h1>
+                    
+                  </div>
+                  <div class="email" style="margin-bottom: 4vh;"><h1 style="font-size: 1.6rem;color: #b8860b;">Email</h1>
+                    
+                  </div>
+                  <div class="email" style="margin-bottom: 4vh;"><h1 style="font-size: 1.6rem;color: #b8860b;">Address</h1>
+                    
+                  </div>
+                </div>
+              </div>
+               <div class="middle box">
+                <div class="footertopic" style="font-weight:normal;">USEFUL LINKS</div>
+                  <div><a href="/myapp">Home</a></div>
+                  <div><a href="/myapp/about">About Us</a></div>
+                  <div><a href="/myapp/form">Contact Us</a></div>
+                  <div><a href="/myapp/about#privacy">Privacy Policy</a></div>
+               </div>
+              
+              <div class="middle box">
+                <div class="footertopic">CATEGORIES</div>
+                {% for categories in category %}
+                    <div><a href="/myapp/prodCat/?categories={{categories.id}}"> {{categories.name}} </a></div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="bottom">
+              <p>Copyright © 2021 <a href="#">VRJ Metal Hub</a></p>
+            </div>
+          </footer>
+    </div>
+    
+</body>
+<script>
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</html>

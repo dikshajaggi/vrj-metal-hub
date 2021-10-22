@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRJ Metal Hub</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'myapp/form.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/headerfooter.css' %}">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  </head>
+<body>
+    <div class="grid-container">
+        <header id="header-container">
+            <div class="topnav" id="myTopnav">
+              <div class="brand"><a href="/myapp"><img src="{% static 'myapp/brand_logo.png' %}" id="brand-logo"></a></div>
+
+             <div class = "wrap">
+                  <div class = "other">
+                   <a href="/myapp" class="abtn" id="home">Home</a>
+                    <a href="/myapp/newArrivals" class="abtn" id="new">New Arrivals</a>
+                    <a href="/myapp/offers" class="abtn">Offers</a>
+                  </div>
+                
+                  <div class="shifthover">
+                    {% for categories in category %}
+                      <a href="/myapp/prodCat/?categories={{categories.id}}">{{categories.name}}</a>
+                    {% endfor %}
+                  </div>
+                </div>
+                
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+              </div>
+        </header>
+        
+
+        <div class="container">
+            <div class="contact-section">
+              <h2 class="ct-section-head">CONTACT US</h2>
+              <div class="row contact-fields">
+                <div class="col-md-8 left-form">
+                 <form method="post">
+                 {% csrf_token %}
+                  <div class="form-group">
+                    <label class="sr-only" for="fname">First Name *</label>
+                    <input class="required form-control" id="fname" name="first_name" placeholder="First Name&nbsp;*" type="text"  required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="lname">Last Name *</label>
+                    <input class="required form-control" id="lname" name="last_name" placeholder="Last Name&nbsp;*" type="text"  required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="contactEmail">Email *</label>
+                    <input class="required form-control h5-email" id="contactEmail" name="email" placeholder="Email&nbsp;*" type="text"  required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="contactPhone">Phone *</label>
+                    <input class="required form-control h5-phone" id="contactPhone" name="phone" placeholder="Phone&nbsp;*" type="text"  required>
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="comment">Type your message here</label>
+                    <textarea class="required form-control" id="comment" name="message" placeholder="Type your message here&nbsp;*" rows="6" required></textarea>
+                  </div>
+                  <button class="btn btn-accent" type="submit">Submit</button>  
+                </form>
+              </div>
+              <div class="col-md-4 contact-info">
+                <div class="email1">
+                  <h2>Email</h2>
+                  <a href="mailto:info@email.com">info@email.com</a>
+                </div>
+                <div class="location">
+                  <h2>Visit</h2>
+                  <p>address </br>
+                  address </br>
+                  address address</p>
+                  <br>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        
+
+        <footer>
+          <div class="content">
+            <div class="left box">
+              <div class="lower">
+                <div class="footertopic" style="font-weight:normal;">CONTACT US</div>
+                <div class="phone" style="margin-bottom: 4vh;"><h4 style="font-size: 1.6rem;color: #b8860b;font-weight:normal;">Phone</h4>
+                </div>
+                <div class="email" style="margin-bottom: 4vh;"><h4 style="font-size: 1.6rem;color: #b8860b;font-weight:normal;">Email</h4>
+                </div>
+                <div class="email" style="margin-bottom: 4vh;"><h4 style="font-size: 1.6rem;color: #b8860b;font-weight:normal;">Address</h4>
+                </div>
+              </div>
+            </div>
+            <div class="middle box">
+              <div class="footertopic" style="font-weight:normal;">USEFUL LINKS</div>
+              <div><a href="/myapp">Home</a></div>
+              <div><a href="/myapp/about">About Us</a></div>
+              <div><a href="">Contact Us</a></div>
+              <div><a href="/myapp/about#privacy">Privacy Policy</a></div>
+            </div>
+            <div class="middle box" >
+              <div class="footertopic" style="font-weight:normal;">CATEGORIES</div>
+                {% for categories in category %}
+                    <div><a href="/myapp/prodCat/?categories={{categories.id}}">{{categories.name}}</a></div>
+                {% endfor %}
+            </div>
+          </div>
+          <div class="bottom">
+           <p>Copyright © 2021 <a href="#">VRJ Metal Hub</a></p>
+          </div>
+        </footer>
+</div>
+
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+        x.className += " responsive";
+        } else {
+        x.className = "topnav";
+        }
+    }
+</script>
+</html>
